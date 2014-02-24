@@ -25,6 +25,6 @@
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = getImport;
     } else {
-        window.getUrls = getImport;
+        window.parseImport = getImport;
     }
 })();
