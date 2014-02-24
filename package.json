@@ -1,0 +1,34 @@
+{
+  "name": "parse-import",
+  "version": "0.1.0",
+  "description": "Parse CSS @import statements",
+  "keywords": [
+    "css",
+    "import",
+    "object",
+    "parse"
+  ],
+  "homepage": "https://github.com/kevva/parse-import",
+  "bugs": "https://github.com/kevva/parse-import/issues",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "license": "MIT",
+  "repository": "git://github.com/kevva/parse-import.git",
+  "scripts": {
+    "test": "mocha --reporter list"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.17.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

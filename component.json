@@ -1,0 +1,17 @@
+{
+  "name": "parse-import",
+  "version": "0.1.0",
+  "description": "Parse CSS @import statements",
+  "keywords": [
+    "css",
+    "import",
+    "object",
+    "parse"
+  ],
+  "license": "MIT",
+  "repo": "git://github.com/kevva/parse-import.git",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
