@@ -1,19 +1,9 @@
 {
   "name": "parse-import",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse CSS @import statements",
-  "keywords": [
-    "css",
-    "import",
-    "object",
-    "parse"
-  ],
-  "authors": [{
-    "name": "Kevin Mårtensson",
-    "email": "kevinmartensson@gmail.com",
-    "url": "http://github.com/kevva"
-  }],
   "license": "MIT",
+  "repository": "kevva/parse-import",
   "main": "index.js",
   "ignore": [
     ".*",
@@ -21,5 +11,11 @@
     "LICENSE.md",
     "package.json",
     "test.js"
+  ],
+  "keywords": [
+    "css",
+    "import",
+    "object",
+    "parse"
   ]
 }

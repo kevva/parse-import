@@ -1,17 +1,17 @@
 {
   "name": "parse-import",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse CSS @import statements",
+  "license": "MIT",
+  "repo": "kevva/parse-import",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
   "keywords": [
     "css",
     "import",
     "object",
     "parse"
-  ],
-  "license": "MIT",
-  "repo": "git://github.com/kevva/parse-import.git",
-  "main": "index.js",
-  "scripts": [
-    "index.js"
   ]
 }
