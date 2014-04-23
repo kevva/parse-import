@@ -4,7 +4,7 @@
   "description": "Parse CSS @import statements",
   "license": "MIT",
   "repository": "kevva/parse-import",
-  "main": "index.js",
+  "main": "browser.js",
   "ignore": [
     ".*",
     "component.json",

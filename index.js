@@ -1,30 +1,36 @@
-(function () {
-    'use strict';
+'use strict';
 
-    var trim = function (str) {
-        str = str
-            .replace(/^url\s?\(/, '')
-            .replace(/\)$/, '')
-            .replace(/^("|\')/, '')
-            .replace(/("|\')$/, '');
+/**
+ * Trim string
+ *
+ * @param {String} str
+ * @api private
+ */
 
-        return str;
-    };
+function trim(str) {
+    str = str
+        .replace(/^url\s?\(/, '')
+        .replace(/\)$/, '')
+        .replace(/^("|\')/, '')
+        .replace(/("|\')$/, '');
 
-    var getImport = function (str) {
-        var regex = /(url\s?\()?(\'|")(.*)(\'|")(\))?/gi;
-        var ret = {};
+    return str;
+}
 
-        ret.path = trim(str.match(regex).toString());
-        ret.condition = str.replace(/(^|\s)@import(\s|$)/gi, '').replace(regex, '').replace(' ', '');
-        ret.rule = str;
+/**
+ * Get @import statements from a string
+ *
+ * @param {String} str
+ * @api public
+ */
 
-        return ret;
-    };
+module.exports = function (str) {
+    var regex = /(url\s?\()?(\'|")(.*)(\'|")(\))?/gi;
+    var ret = {};
 
-    if (typeof module !== 'undefined' && module.exports) {
-        module.exports = getImport;
-    } else {
-        window.parseImport = getImport;
-    }
-})();
+    ret.path = trim(str.match(regex).toString());
+    ret.condition = str.replace(/(^|\s)@import(\s|$)/gi, '').replace(regex, '').replace(' ', '');
+    ret.rule = str;
+
+    return ret;
+};
