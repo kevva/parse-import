@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "Parse CSS @import statements",
   "license": "MIT",
-  "repo": "kevva/parse-import",
+  "repository": "kevva/parse-import",
   "main": "index.js",
   "scripts": [
     "index.js"
