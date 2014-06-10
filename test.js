@@ -5,8 +5,26 @@ var assert = require('assert');
 var parseImport = require('./');
 
 describe('parseImport()', function () {
-    it('should parse @import', function (cb) {
+    it('should parse bare string @import', function (cb) {
         var ret = parseImport('@import "test/foo.css" (min-width: 25em)');
+
+        assert.strictEqual(ret.path, 'test/foo.css');
+        assert.strictEqual(ret.condition, '(min-width: 25em)');
+
+        cb();
+    });
+
+    it('should parse url() quoted @import', function (cb) {
+        var ret = parseImport('@import url("test/foo.css") (min-width: 25em)');
+
+        assert.strictEqual(ret.path, 'test/foo.css');
+        assert.strictEqual(ret.condition, '(min-width: 25em)');
+
+        cb();
+    });
+
+    it('should parse url() non-quoted @import', function (cb) {
+        var ret = parseImport('@import url(test/foo.css) (min-width: 25em)');
 
         assert.strictEqual(ret.path, 'test/foo.css');
         assert.strictEqual(ret.condition, '(min-width: 25em)');

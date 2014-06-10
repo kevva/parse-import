@@ -26,7 +26,7 @@ function trim(str) {
  */
 
 module.exports = function (str) {
-    var regex = /(?:url\s?\((?:.*)\))|(\'|")(?:.*)\1/gi;
+    var regex = /(?:url\s?\((?:[^)]+)\))|(\'|")(?:.*)\1/gi;
     var ret = {};
 
     if (!str.match(regex)) {
