@@ -4,16 +4,8 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save parse-import
-```
-
-```bash
-$ component install kevva/parse-import
-```
-
-```bash
-$ bower install --save parse-import
 ```
 
 ## Usage
@@ -22,7 +14,7 @@ $ bower install --save parse-import
 var parseImport = require('parse-import');
 
 parseImport('@import "test/foo.css" (min-width: 25em)');
-// => { path: 'test/foo.css', condition: '(min-width: 25em)', rule: '@import "test/foo.css" (min-width: 25em)' }
+//=> { path: 'test/foo.css', condition: '(min-width: 25em)', rule: '@import "test/foo.css" (min-width: 25em)' }
 ```
 
 ## License
