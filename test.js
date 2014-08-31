@@ -1,34 +1,25 @@
-/*global describe, it */
 'use strict';
 
-var assert = require('assert');
 var parseImport = require('./');
+var test = require('ava');
 
-describe('parseImport()', function () {
-    it('should parse bare string @import', function (cb) {
-        var ret = parseImport('@import "test/foo.css" (min-width: 25em)');
+test('parse bare string @import', function (t) {
+    var ret = parseImport('@import "test/foo.css" (min-width: 25em)');
 
-        assert.strictEqual(ret.path, 'test/foo.css');
-        assert.strictEqual(ret.condition, '(min-width: 25em)');
+    t.assert(ret.path === 'test/foo.css');
+    t.assert(ret.condition === '(min-width: 25em)');
+});
 
-        cb();
-    });
+test('parse url() quoted @import', function (t) {
+    var ret = parseImport('@import url("test/foo.css") (min-width: 25em)');
 
-    it('should parse url() quoted @import', function (cb) {
-        var ret = parseImport('@import url("test/foo.css") (min-width: 25em)');
+    t.assert(ret.path === 'test/foo.css');
+    t.assert(ret.condition === '(min-width: 25em)');
+});
 
-        assert.strictEqual(ret.path, 'test/foo.css');
-        assert.strictEqual(ret.condition, '(min-width: 25em)');
+test('parse url() non-quoted @import', function (t) {
+    var ret = parseImport('@import url(test/foo.css) (min-width: 25em)');
 
-        cb();
-    });
-
-    it('should parse url() non-quoted @import', function (cb) {
-        var ret = parseImport('@import url(test/foo.css) (min-width: 25em)');
-
-        assert.strictEqual(ret.path, 'test/foo.css');
-        assert.strictEqual(ret.condition, '(min-width: 25em)');
-
-        cb();
-    });
+    t.assert(ret.path === 'test/foo.css');
+    t.assert(ret.condition === '(min-width: 25em)');
 });
