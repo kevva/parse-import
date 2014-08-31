@@ -24,6 +24,9 @@
     "object",
     "parse"
   ],
+  "dependencies": {
+    "import-regex": "^1.0.0"
+  },
   "devDependencies": {
     "mocha": "^1.18.2"
   }
