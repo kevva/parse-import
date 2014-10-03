@@ -1,4 +1,4 @@
-# parse-import [![Build Status](https://travis-ci.org/kevva/parse-import.svg?branch=master)](https://travis-ci.org/kevva/parse-import)
+# parse-import [![Build Status](http://img.shields.io/travis/kevva/parse-import.svg?style=flat)](https://travis-ci.org/kevva/parse-import)
 
 > Parse CSS `@import` statements.
 
