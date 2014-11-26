@@ -25,9 +25,9 @@
     "parse"
   ],
   "dependencies": {
-    "import-regex": "^1.0.0"
+    "get-imports": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "^0.0.4"
   }
 }

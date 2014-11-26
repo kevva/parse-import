@@ -12,9 +12,24 @@ $ npm install --save parse-import
 
 ```js
 var parseImport = require('parse-import');
+var str = [
+	'@import url("foo.css");',
+	'@import "bar.css" only screen and (min-width: 25em);'
+].join(' ');
 
-parseImport('@import "test/foo.css" (min-width: 25em)');
-//=> { path: 'test/foo.css', condition: '(min-width: 25em)', rule: '@import "test/foo.css" (min-width: 25em)' }
+parseImport(str);
+
+/*
+[{ 
+	path: 'foo.css', 
+	condition: '',
+	rule: '@import url("foo.css")'
+}, { 
+	path: 'bar.css', 
+	condition: 'only screen and (min-width: 25em)',
+	rule: '@import "bar.css" only screen and (min-width: 25em)'
+}]
+ */
 ```
 
 ## License
