@@ -13,7 +13,7 @@ function path(str) {
 	return /(?:url\()(?:.*?)(?:\))|(["\'])(?:[^"\')]+)\1/ig.exec(str)[0]
 		.replace(/(?:url\()/ig, '')
 		.replace(/(?:\))/g, '')
-		.replace(/["\']/g, '')
+		.replace(/(?:["\'])/g, '')
 		.trim();
 }
 
