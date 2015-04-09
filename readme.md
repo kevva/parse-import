@@ -2,11 +2,13 @@
 
 > Parse CSS `@import` statements.
 
+
 ## Install
 
-```sh
+```
 $ npm install --save parse-import
 ```
+
 
 ## Usage
 
@@ -31,6 +33,7 @@ parseImport(str);
 }]
  */
 ```
+
 
 ## License
 
