@@ -1,8 +1,7 @@
 'use strict';
-
 var getImports = require('get-imports');
 
-function path(str) {
+function getPath(str) {
 	return /(?:url\()(?:.*?)(?:\))|(["\'])(?:[^"\')]+)\1/ig.exec(str)[0]
 		.replace(/(?:url\()/ig, '')
 		.replace(/(?:\))/g, '')
@@ -10,7 +9,7 @@ function path(str) {
 		.trim();
 }
 
-function condition(str) {
+function getCondition(str) {
 	return str.replace(/(?:url\()(?:.*?)(?:\))|(["\'])(?:[^"\')]+)\1/ig, '')
 		.replace(/(?:@import)(?:\s)*/g, '')
 		.trim();
@@ -19,13 +18,13 @@ function condition(str) {
 module.exports = function (str) {
 	var imports = getImports(str);
 
-	return imports.map(function (imp) {
-		imp = imp.replace(/(?:;)$/g, '');
+	return imports.map(function (imprt) {
+		imprt = imprt.replace(/(?:;)$/g, '');
 
 		return {
-			path: path(imp),
-			condition: condition(imp),
-			rule: imp
+			path: getPath(imprt),
+			condition: getCondition(imprt),
+			rule: imprt
 		};
 	});
 };
