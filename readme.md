@@ -13,14 +13,9 @@ $ npm install --save parse-import
 ## Usage
 
 ```js
-var parseImport = require('parse-import');
-var str = [
-	'@import url("foo.css");',
-	'@import "bar.css" only screen and (min-width: 25em);'
-].join(' ');
+const parseImport = require('parse-import');
 
-parseImport(str);
-
+parseImport('@import url("foo.css");\n@import "bar.css" only screen and (min-width: 25em);');
 /*
 [{ 
 	path: 'foo.css', 
